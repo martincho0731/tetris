@@ -125,11 +125,26 @@ function drawBoard() {
     drawPiece(currentPiece, position);
 }
 
-document.addEventListener("keydown", (event) => {
-    if (event.key === "ArrowLeft" && isValidMove(currentPiece.shape, -1, 0)) position.x--;
-    if (event.key === "ArrowRight" && isValidMove(currentPiece.shape, 1, 0)) position.x++;
-    if (event.key === "ArrowDown" && isValidMove(currentPiece.shape, 0, 1)) position.y++;
-    if (event.key === "ArrowUp") rotatePiece();
+// Controles táctiles para móviles
+let startX, startY;
+canvas.addEventListener("touchstart", (e) => {
+    startX = e.touches[0].clientX;
+    startY = e.touches[0].clientY;
+});
+
+canvas.addEventListener("touchend", (e) => {
+    let endX = e.changedTouches[0].clientX;
+    let endY = e.changedTouches[0].clientY;
+    let diffX = endX - startX;
+    let diffY = endY - startY;
+
+    if (Math.abs(diffX) > Math.abs(diffY)) {
+        if (diffX > 30 && isValidMove(currentPiece.shape, 1, 0)) position.x++;
+        else if (diffX < -30 && isValidMove(currentPiece.shape, -1, 0)) position.x--;
+    } else {
+        if (diffY > 30 && isValidMove(currentPiece.shape, 0, 1)) position.y++;
+        else if (diffY < -30) rotatePiece();
+    }
     drawBoard();
 });
 
