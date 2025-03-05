@@ -1,0 +1,21 @@
+{
+  "name": "Tetris PWA",
+  "short_name": "Tetris",
+  "description": "Un juego de Tetris clásico en PWA.",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#000000",
+  "theme_color": "#ffcc00",
+  "icons": [
+    {
+      "src": "icons/tetris_icon_192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "icons/tetris_icon_512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
