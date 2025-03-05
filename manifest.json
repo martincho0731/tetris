@@ -1,4 +1,5 @@
 {
+  "id": "https://martincho0731.github.io/tetris/",
   "name": "Tetris PWA",
   "short_name": "Tetris",
   "description": "Un juego de Tetris clásico en PWA.",
@@ -6,19 +7,25 @@
   "display": "standalone",
   "background_color": "#000000",
   "theme_color": "#ffcc00",
-  
-    "icons": [
-      {
-        "src": "icons/tetris_icon_192x192.png",
-        "sizes": "192x192",
-        "type": "image/png"
-      },
-      {
-        "src": "icons/tetris_icon_512x512.png",
-        "sizes": "512x512",
-        "type": "image/png"
-      }
-    ]
-  
-  
+  "orientation": "portrait-primary",
+  "launch_handler": {},
+  "icons": [
+    {
+      "src": "icons/tetris_icon_192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "icons/tetris_icon_512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "screenshots/screenshot1.png",
+      "type": "image/png",
+      "sizes": "1080x1920"
+    }
+  ]
 }
